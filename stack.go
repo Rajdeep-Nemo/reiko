@@ -9,6 +9,7 @@ type Stack[T any] struct {
 	items []T
 }
 
+// Errors
 var ErrEmpty = errors.New("stack is empty")
 
 // Push a value onto the stack
@@ -46,3 +47,6 @@ func (stack *Stack[T]) Peek() (T, error) {
 }
 
 // Size returns the current size of the stack
+func (stack *Stack[T]) Size() int {
+	return len(stack.items)
+}
