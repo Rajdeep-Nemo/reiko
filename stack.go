@@ -4,10 +4,12 @@ import (
 	"errors"
 )
 
-// Stack type interface, holds data in a slice
+// Stack struct
 type Stack[T any] struct {
 	items []T
 }
+
+var ErrEmpty = errors.New("stack is empty")
 
 // Push a value onto the stack
 func (stack *Stack[T]) Push(value T) {
@@ -20,7 +22,7 @@ func (stack *Stack[T]) Pop() (T, error) {
 	var zeroValue T
 	// If empty return error
 	if len(stack.items) == 0 {
-		return zeroValue, errors.New("stack is empty")
+		return zeroValue, ErrEmpty
 	}
 	// Get the top element and remove it from the stack
 	value := stack.items[len(stack.items)-1]
@@ -29,16 +31,18 @@ func (stack *Stack[T]) Pop() (T, error) {
 	return value, nil
 }
 
-// Returns the top element without removing from the stack
+// Peek returns the top element without removing from the stack
 func (stack *Stack[T]) Peek() (T, error) {
 	// Default value of type T
 	var zeroValue T
 	// If empty return error
 	if len(stack.items) == 0 {
-		return zeroValue, errors.New("stack is empty")
+		return zeroValue, ErrEmpty
 	}
 	// Get the top element
 	value := stack.items[len(stack.items)-1]
 	// Return the top element
 	return value, nil
 }
+
+// Size returns the current size of the stack
