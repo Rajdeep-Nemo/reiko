@@ -50,3 +50,12 @@ func (stack *Stack[T]) Peek() (T, error) {
 func (stack *Stack[T]) Size() int {
 	return len(stack.items)
 }
+
+// IsEmpty returns if the stack is empty
+func (stack *Stack[T]) IsEmpty() bool {
+	if len(stack.items) == 0 {
+		return true
+	} else {
+		return false
+	}
+}
