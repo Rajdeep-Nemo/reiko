@@ -1,4 +1,4 @@
-package whatever
+package reiko
 
 import "testing"
 
