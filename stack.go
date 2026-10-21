@@ -20,6 +20,7 @@ func (stack *Stack[T]) Pop() (T, bool) {
 	}
 	// Get the top element and remove it from the stack
 	value := stack.items[len(stack.items)-1]
+	stack.items[len(stack.items)-1] = zeroValue
 	stack.items = stack.items[:len(stack.items)-1]
 	// Return the top element
 	return value, true
