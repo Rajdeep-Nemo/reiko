@@ -14,41 +14,7 @@ Requires Go 1.18 or later (generics).
 
 ## Stack
 
-A last-in, first-out (LIFO) collection. The last value pushed is the first one popped.
-
-The zero value is an empty stack, ready to use. A `Stack` is **not** safe for concurrent use; wrap it with a `sync.Mutex` if you need that.
-
-### Example
-
-```go
-package main
-
-import (
-	"fmt"
-
-	"github.com/Rajdeep-Nemo/reiko"
-)
-
-func main() {
-	var s reiko.Stack[int]
-
-	s.Push(1)
-	s.Push(2)
-	s.Push(3)
-
-	if top, ok := s.Peek(); ok {
-		fmt.Println("top:", top) // top: 3
-	}
-
-	for !s.IsEmpty() {
-		v, _ := s.Pop()
-		fmt.Println(v) // 3, 2, 1
-	}
-
-	_, ok := s.Pop()
-	fmt.Println(ok) // false, the stack is empty
-}
-```
+The zero value is an empty stack, ready to use. A `Stack` is **not** safe for concurrent use.
 
 ### Methods
 
