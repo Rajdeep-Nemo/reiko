@@ -2,7 +2,7 @@
 
 Small, generic data structures for Go that the standard library doesn't provide.
 
-> Currently available: **Stack**. Queue and Set are planned.
+> Currently available: Stack and Queue, Set is planned.
 
 ## Installation
 
