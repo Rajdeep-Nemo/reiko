@@ -2,6 +2,8 @@
 
 Small, generic data structures for Go that the standard library doesn't provide.
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/Rajdeep-Nemo/reiko.svg)](https://pkg.go.dev/github.com/Rajdeep-Nemo/reiko)
+
 > Currently available: Stack and Queue, Set is planned.
 
 ## Installation
